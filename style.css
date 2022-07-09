@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('http://fonts.cdnfonts.com/css/clash-display');
+
+:root {
+  --primary-color: #1CBEEC;
+  --header-font: 'Clash Display', sans-serif;
+  --paragraph-font: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: linear-gradient(140.66deg, #021B4C 8.79%, #0174A9 77.48%);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+}
+
+nav .logo {
+  color: #fff;
+  font-size: 27px;
+  font-weight: 600;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 5px;
+}
+
+nav ul li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 100;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  color: var(--primary-color)
+    /* background: #fff; */
+}
+
+nav .menu-btn i {
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  nav {
+    padding: 0 40px 0 50px;
+  }
+}
+
+@media (max-width: 920px) {
+  nav .menu-btn i {
+    display: block;
+  }
+
+  #click:checked~.menu-btn i:before {
+    content: "\f00d";
+  }
+
+  nav ul {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+
+  #click:checked~ul {
+    left: 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    margin: 40px 0;
+  }
+
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  #click:checked~ul li a {
+    margin-left: 0px;
+  }
+
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: none;
+    color: cyan;
+  }
+}
+
+/* navigation ends */
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* main section */
+.main__section {
+  background: linear-gradient(140.66deg, #021B4C 8.79%, #0174A9 77.48%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 3rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  height: 100vh;
+  flex-wrap: wrap;
+}
+
+.left__side h2 {
+  font-family: var(--header-font);
+  font-size: 5rem;
+  font-weight: 500;
+  color: white;
+
+}
+
+.left__side p {
+  font-size: 1.2rem;
+  color: white;
+
+}
+
+.left__side-vector {
+  width: 10rem;
+}
+
+/* searchbox */
+.search__box {
+  background: white;
+  border-radius: 1rem;
+  /* padding-top: 0.4rem; */
+  margin-top: 1rem;
+  width: 27.8rem;
+  height: 3.5rem;
+  outline: 8px solid  rgba(225, 228, 233, 0.25);
+  flex-wrap: wrap;
+  
+
+}
+input[type="text"] {
+  background: none;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  margin-top: 1rem;
+  width: 17rem;
+  border-radius: none;
+  border: none;
+  outline: none;
+}
+
+input[type="submit"] {
+align-items: center;
+  color: white;
+  height: 2.3rem;
+  width: 7rem;
+  left: 626px;
+  background: #1CBEEC;
+  backdrop-filter: blur(483px);
+  border-radius: 1rem;
+  margin-left: 1.3rem;
+  margin-top: .6rem;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1033px){
+    
+  .main__section{
+    display: grid;
+   grid-template-columns: 1fr;
+   width: 100%;
+   height: 100%;
+    
+  }
+  .right__side-img{
+    width: 100%;
+  }
+  .left__side h2{
+    font-size: 3rem;
+  }
+  .left__side p{
+    font-size: 1.2rem;
+  }
+  /* .search__box {
+    flex-wrap: wrap;
+    width: 100%
+  }
+  .input[type="text"] {
+    width: 1rem;
+    flex-wrap: wrap;
+  } */
+}
+@media (max-width: 473px){
+  input[type="submit"] {
+    margin-left: 0;
+    flex-wrap: wrap;
+    width:4rem;
+    max-width: 100%;
+  }
+  .search__box {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    max-width: 100%;
+  }
+}
